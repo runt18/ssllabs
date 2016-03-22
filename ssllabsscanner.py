@@ -7,13 +7,15 @@ import time
 
 API = "https://api.ssllabs.com/api/v2/"
 
-def requestAPI(path, payload={}):
+def requestAPI(path, payload=None):
 
 	"""This is a helper method that takes the path to the relevant
 		API call and the user-defined payload and requests the 
 		data/server test from Qualys SSL Labs.  
 
 		Returns JSON formatted data"""
+	if payload is None:
+		payload = {}
 
 	url = API + path 
 	
